@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "pitt-hs",
+  "owner": {
+    "name": "Nick Burcin",
+    "email": "nick@nicholasburcin.com"
+  },
+  "description": "Pitt Health Sciences digital-strategy plugins. Shared, versioned tooling for the HS content team.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "pitt-hs-content-ops",
+      "source": "./plugins/pitt-hs-content-ops",
+      "description": "Content-operations toolkit for Pitt Health Sciences. Ships the upmc-release-to-web skill: turn a UPMC Media news release into a Pitt HS web article, approval-gated and non-destructive, with a correction-capture loop that feeds writer edits back into the shared rules.",
+      "category": "productivity",
+      "keywords": ["pitt", "health-sciences", "editorial", "upmc", "docx"]
+    }
+  ]
+}

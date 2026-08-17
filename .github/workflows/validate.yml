@@ -1,0 +1,26 @@
+name: Validate marketplace
+
+# Runs on every push and pull request. Keeps a broken release from ever reaching
+# the team's `/plugin update`: it lints the manifests and exercises the
+# upmc-release-to-web transform engine end to end.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install python-docx
+
+      - name: Smoke test (manifests + transform engine)
+        run: python tests/smoke_test.py
